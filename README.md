@@ -93,6 +93,7 @@ This project involves analyzing circuit functionality before and after synthesis
      - **Slow**: Highest delay, lowest power
      - **Fast**: Lowest delay, highest power
      - **Typical**: Intermediate results
+       
    
    | Corner  | Delay (ns) | Dynamic Power (µW) |
    |---------|------------|--------------------|
