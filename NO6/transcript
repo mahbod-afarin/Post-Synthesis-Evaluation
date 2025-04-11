@@ -1,0 +1,41 @@
+# Loading project post
+# reading /opt/Mentor/Modelsim6.6/modeltech/linux/../modelsim.ini
+# Loading project mahbod2
+# Compile of file_1_1_netlist.v was successful.
+# Compile of file_1_1_tb.v was successful.
+# Compile of tsmc18.v was successful.
+# 3 compiles, 0 failed with no errors. 
+# Compile of file_1_1_netlist.v was successful.
+# Compile of file_1_1_tb.v was successful.
+# Compile of tsmc18.v was successful.
+# 3 compiles, 0 failed with no errors. 
+vsim -voptargs=+acc work.file_1_1_tb
+# vsim -voptargs=+acc work.file_1_1_tb 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.file_1_1_tb(fast)
+# Loading work.file_1_1(fast)
+# ** Warning: (vsim-3009) [TSCALE] - Module 'file_1_1' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /file_1_1_tb/DUT
+# Loading work.MX2X1(fast)
+# Loading work.file_1_0_SIZE8_1(fast)
+# ** Warning: (vsim-3009) [TSCALE] - Module 'file_1_0_SIZE8_1' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /file_1_1_tb/DUT/file_1_0_u1
+# Loading work.NOR3X1(fast)
+# Loading work.NOR2X1(fast)
+# Loading work.INVX1(fast)
+# Loading work.NOR3BX1(fast)
+# Loading work.NOR2BX1(fast)
+# Loading work.NOR4BX1(fast)
+# Loading work.NAND3X1(fast)
+# Loading work.OR4X1(fast)
+# Loading work.file_1_0_SIZE8_0(fast)
+# ** Warning: (vsim-3009) [TSCALE] - Module 'file_1_0_SIZE8_0' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /file_1_1_tb/DUT/file_1_0_u2
+add wave \
+{sim:/file_1_1_tb/N } \
+{sim:/file_1_1_tb/sel } \
+{sim:/file_1_1_tb/ready_urgent } \
+{sim:/file_1_1_tb/ready } \
+{sim:/file_1_1_tb/sel_valid_urgent } \
+{sim:/file_1_1_tb/sel_valid } 
+run -all

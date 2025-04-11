@@ -1,0 +1,25 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : area
+Design : file_1_1
+Version: C-2009.06-SP5
+Date   : Thu Nov 19 12:11:17 2015
+****************************************
+
+Library(s) Used:
+
+    fast (File: /home/icic/Desktop/m5/library/osu/fast.db)
+
+Number of ports:               26
+Number of nets:                42
+Number of cells:               10
+Number of references:           3
+
+Combinational area:        565.488011
+Noncombinational area:       0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:           565.488011
+Total area:                 undefined
+1

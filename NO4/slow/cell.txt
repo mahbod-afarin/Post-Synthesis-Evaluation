@@ -1,0 +1,33 @@
+ 
+****************************************
+Report : cell
+Design : file_1_1
+Version: C-2009.06-SP5
+Date   : Thu Nov 19 12:08:29 2015
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    p - parameterized
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U18                       MX2X1           slow            26.611200 
+U19                       MX2X1           slow            26.611200 
+U20                       MX2X1           slow            26.611200 
+U21                       MX2X1           slow            26.611200 
+U22                       MX2X1           slow            26.611200 
+U23                       MX2X1           slow            26.611200 
+U24                       MX2X1           slow            26.611200 
+U25                       MX2X1           slow            26.611200 
+file_1_0_u1               file_1_0_SIZE8_1                176.299204
+                                                                    h, p
+file_1_0_u2               file_1_0_SIZE8_0                176.299204
+                                                                    h, p
+--------------------------------------------------------------------------------
+Total 10 cells                                            565.488011
+1

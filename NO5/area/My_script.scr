@@ -1,0 +1,45 @@
+set target_library "/home/icic/Desktop/test2/library/tsmc/tsmc_0.18u.db"
+set link_library "/home/icic/Desktop/test2/library/tsmc/tsmc_0.18u.db"
+set symbol_library "/home/icic/Desktop/test2/library/tsmc/tsmc18.sdb"
+
+
+set my_toplevel file_1_1
+
+	set my_input_delay_ns 0
+	set my_output_delay_ns 0
+
+#################################################
+
+	analyze -f verilog -library work /home/icic/Desktop/test2/source/file_1_1.v
+	analyze -f verilog -library work /home/icic/Desktop/test2/source/file_1_0.v
+	
+
+elaborate $my_toplevel
+
+current_design $my_toplevel
+
+
+list_designs
+uniquify
+
+set_max_area 0    
+
+
+compile
+write -h
+set power_preserve_rtl_hier_names true
+#rtl2saif -output Mux8.saif -design file_1_1
+
+compile -incremental
+
+remove_unconnected_ports -blast_buses [find -hierarchy cell "*"]
+
+report_cell
+report_area > /home/icic/Desktop/test2/out/area.txt
+report_port > /home/icic/Desktop/test2/out/port.txt
+report_timing > /home/icic/Desktop/test2/out/time.txt
+report_power > /home/icic/Desktop/test2/out/power.txt
+
+write -f verilog -output /home/icic/Desktop/test2/out/file_1_1_netlist.v -hierarchy
+
+

@@ -1,0 +1,31 @@
+`timescale 1 ns/100 ps  // time unit = 1ns; precision = 1/10 ns
+
+
+module file_1_1 #(
+    parameter N = 2
+)
+(
+    input [N-1:0]   ready,
+    input [N-1:0]   ready_urgent,
+    output [N-1:0]  sel,
+    output          sel_valid,
+    output          sel_valid_urgent
+);
+
+    wire [N-1:0]    w_sel_normal;
+    wire [N-1:0]    w_sel_urgent;
+
+    file_1_0 #(.SIZE(N)) file_1_0_u1 (
+        .requests (ready),
+        .grants (w_sel_normal),
+        .grant_valid (sel_valid));
+
+    file_1_0 #(.SIZE(N)) file_1_0_u2 (
+        .requests (ready_urgent),
+        .grants (w_sel_urgent),
+        .grant_valid (sel_valid_urgent));
+
+    assign sel = (sel_valid_urgent == 1'b1) ? w_sel_urgent : w_sel_normal;
+
+endmodule
+

@@ -1,0 +1,40 @@
+Loading db file '/home/icic/Desktop/test/library/tsmc/tsmc_0.18u.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : file_1_1
+Version: C-2009.06-SP5
+Date   : Fri Nov 20 17:50:47 2015
+****************************************
+
+
+Library(s) Used:
+
+    typical (File: /home/icic/Desktop/test/library/tsmc/tsmc_0.18u.db)
+
+
+Operating Conditions: typical   Library: typical
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =  23.4925 uW   (66%)
+  Net Switching Power  =  12.0669 uW   (34%)
+                         ---------
+Total Dynamic Power    =  35.5594 uW  (100%)
+
+Cell Leakage Power     =   3.2997 nW
+
+1
