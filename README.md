@@ -1,4 +1,4 @@
-# Pre- and Post-Synthesis Evaluation of a Designs: Functional Verification, Area, Timing, and Power Analysis
+# Pre and Post-Synthesis Evaluation of a Designs: Functional Verification, Area, Timing, and Power Analysis
 
 This project involves analyzing circuit functionality before and after synthesis, and examining various design parameters using industry-standard tools.
 
@@ -6,21 +6,19 @@ This project involves analyzing circuit functionality before and after synthesis
    - Analyze the provided circuit code and determine its **functionality**.
    - Write a **bench-test** to verify the correct behavior of the circuit.
      
-**Answer:**
+   **Answer:**
+   - The project consists of a module `file_1_0` used inside `file_1_1`.
+   - `file_1_0` takes `requests` as input and generates `grants` and `grant_valid` as outputs.
+   - It uses a `grant_temp` register to combine and assign outputs.
+   - Based on the bit pattern in `requests`, the correct output is selected.
+   - If no `request` bit is active, the output remains zero.
+   
+   The module `file_1_1` uses **two instances** of `file_1_0`.  
+   An `if` statement controlled by `sel_valid_u` decides which instance output to forward.
+   
+   A **ModelSim** testbench was created to verify multiple test conditions.  
+   ✅ Simulation results matched the expected logic.
 
-- The project consists of a module `file_1_0` used inside `file_1_1`.
-- `file_1_0` takes `requests` as input and generates `grants` and `grant_valid` as outputs.
-- It uses a `grant_temp` register to combine and assign outputs.
-- Based on the bit pattern in `requests`, the correct output is selected.
-- If no `request` bit is active, the output remains zero.
-
-The module `file_1_1` uses **two instances** of `file_1_0`.  
-An `if` statement controlled by `sel_valid_u` decides which instance output to forward.
-
-A **ModelSim** testbench was created to verify multiple test conditions.  
-✅ Simulation results matched the expected logic.
-
----
 2. **Synthesis using Design Compiler (DC)**
    - Use the **DC tool** with a provided sample script (modify as needed).
    - Understand each command in the script and what result it produces.
