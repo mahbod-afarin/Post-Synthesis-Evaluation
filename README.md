@@ -5,7 +5,9 @@ This project involves analyzing circuit functionality before and after synthesis
 1. **Functionality and Bench-Test**
    - Analyze the provided circuit code and determine its **functionality**.
    - Write a **bench-test** to verify the correct behavior of the circuit.
+     
 **Answer:**
+
 - The project consists of a module `file_1_0` used inside `file_1_1`.
 - `file_1_0` takes `requests` as input and generates `grants` and `grant_valid` as outputs.
 - It uses a `grant_temp` register to combine and assign outputs.
