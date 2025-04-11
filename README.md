@@ -39,8 +39,9 @@ report_area
 report_cell
 report_power
 report_timing
+```
 
-The post-synthesis schematic matched the logical design and simulation.
+✅ The post-synthesis schematic matched the logical design and simulation.
 
 3. **Synthesis Output Requirements**
    The output must include:
