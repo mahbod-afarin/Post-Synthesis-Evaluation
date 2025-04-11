@@ -52,25 +52,23 @@ This project involves analyzing circuit functionality before and after synthesis
    - ✅ Area report  
    - ✅ Timing report
 
-**Answer:**
+   **Answer:**
+   
+   The synthesis output included the following:
+   Area Report:
+   - Total cell area: **565.488 nm²**
+   
+   Power Report:
+   - Dynamic Power: **35.55 µW**
+   - Leakage Power: **3.2 nW**
+   
+   Cell Usage:
+   - **10 total cells** used
+   - Mostly **3-to-1 multiplexers (MX2X1)**, each occupying **26.61 µm²**
+   
+   Timing Report:
+   - Critical path delay: **1.0 ns**
 
-The synthesis output included the following:
-
-### Area Report
-- Total cell area: **565.488 nm²**
-
-### Power Report
-- Dynamic Power: **35.55 µW**
-- Leakage Power: **3.2 nW**
-
-### Cell Usage
-- **10 total cells** used
-- Mostly **3-to-1 multiplexers (MX2X1)**, each occupying **26.61 µm²**
-
-### Timing Report
-- Critical path delay: **1.0 ns**
-
----
 4. **PVT Corner Analysis**
    Synthesize the circuit under various PVT (Process-Voltage-Temperature) corners using the provided libraries (Slow, Typical, Fast). Fill out and analyze the table below:
 
