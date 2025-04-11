@@ -55,18 +55,18 @@ This project involves analyzing circuit functionality before and after synthesis
    **Answer:**
    
    The synthesis output included the following:
-   Area Report:
+   **Area Report:**
    - Total cell area: **565.488 nm²**
    
-   Power Report:
+   **Power Report:**
    - Dynamic Power: **35.55 µW**
    - Leakage Power: **3.2 nW**
    
-   Cell Usage:
+   **Cell Usage:**
    - **10 total cells** used
    - Mostly **3-to-1 multiplexers (MX2X1)**, each occupying **26.61 µm²**
    
-   Timing Report:
+   **Timing Report:**
    - Critical path delay: **1.0 ns**
 
 4. **PVT Corner Analysis**
@@ -84,47 +84,43 @@ This project involves analyzing circuit functionality before and after synthesis
    | F      | F    | F    | F    | F   | F    | Pseudo-nMOS, noise margin, read/write issues         |
    | F      | F    | F    | F    | F   | F    | Ratioed circuits, race conditions                    |
 
-**Answer:**
+   **Answer:**
+   
+   Synthesis was repeated with **Slow**, **Typical**, and **Fast** libraries:
+   
+   - Area remained constant across all corners due to small circuit size.
+   - Power & delay varied with corner conditions:
+     - **Slow**: Highest delay, lowest power
+     - **Fast**: Lowest delay, highest power
+     - **Typical**: Intermediate results
+   
+   | Corner  | Delay (ns) | Dynamic Power (µW) |
+   |---------|------------|--------------------|
+   | Slow    | ↑          | ↓                  |
+   | Fast    | ↓          | ↑                  |
+   | Typical | --         | --                 |
 
-Synthesis was repeated with **Slow**, **Typical**, and **Fast** libraries:
-
-- Area remained constant across all corners due to small circuit size.
-- Power & delay varied with corner conditions:
-  - **Slow**: Highest delay, lowest power
-  - **Fast**: Lowest delay, highest power
-  - **Typical**: Intermediate results
-
-| Corner  | Delay (ns) | Dynamic Power (µW) |
-|---------|------------|--------------------|
-| Slow    | ↑          | ↓                  |
-| Fast    | ↓          | ↑                  |
-| Typical | --         | --                 |
-
-> Increasing `V<sub>dd</sub>` improves speed but raises power consumption due to increased current and switching activity.
-
----
 5. **Optimization Constraint Evaluation**
    - Analyze the effect of constraints (at least on **speed** and **area**) during synthesis.
 
-**Answer:**
+   **Answer:**
+   
+   Two constraints were tested:
+   
+   - `set_max_area 0`: Minimized area as much as possible
+   - `set_max_delay 0 -to [all_output]`: Forced aggressive delay optimization
+   
+   **Results**:
+   - DC attempted to optimize within specified limits.
+   - Minimal improvements observed due to small design size.
 
-Two constraints were tested:
-
-- `set_max_area 0`: Minimized area as much as possible
-- `set_max_delay 0 -to [all_output]`: Forced aggressive delay optimization
-
-**Results**:
-- DC attempted to optimize within specified limits.
-- Minimal improvements observed due to small design size.
-
----
 6. **Post-Synthesis Simulation**
    - Use **ModelSim** to simulate the post-synthesis netlist.
    - Demonstrate that **pre-synthesis (RTL)** and **post-synthesis** simulations match.
    - Discuss what this output similarity proves about the design.
 
-**Answer:**
-
-- Post-synthesis simulation was performed using the **netlist**.
-- The results matched **RTL simulation**, verifying correct synthesis.
-- Output waveforms confirmed no change in behavior, proving **functional correctness post-synthesis**.
+   **Answer:**
+   
+   - Post-synthesis simulation was performed using the **netlist**.
+   - The results matched **RTL simulation**, verifying correct synthesis.
+   - Output waveforms confirmed no change in behavior, proving **functional correctness post-synthesis**.
