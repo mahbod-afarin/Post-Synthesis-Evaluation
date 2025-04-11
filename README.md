@@ -25,6 +25,23 @@ A **ModelSim** testbench was created to verify multiple test conditions.
    - Use the **DC tool** with a provided sample script (modify as needed).
    - Understand each command in the script and what result it produces.
 
+**Answer:**
+
+A synthesis script was written and executed in Synopsys Design Compiler:
+
+```tcl
+set target_library ...
+set link_library ...
+analyze -f verilog ...
+elaborate ...
+compile
+report_area
+report_cell
+report_power
+report_timing
+
+The post-synthesis schematic matched the logical design and simulation.
+
 3. **Synthesis Output Requirements**
    The output must include:
    - Circuit reports
