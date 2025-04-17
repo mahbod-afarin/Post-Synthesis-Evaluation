@@ -2,9 +2,9 @@
 
 This project involves analyzing circuit functionality before and after synthesis, and examining various design parameters using industry-standard tools. You can find the final report of this project [here](https://github.com/mahbod-afarin/Post-Synthesis-Evaluation/blob/main/Report.pdf).
 
-1. **Functionality and Bench-Test**
+1. **Functionality and Testbench**
    - Analyze the provided circuit code and determine its **functionality**.
-   - Write a **bench-test** to verify the correct behavior of the circuit.
+   - Write a **testbench** to verify the correct behavior of the circuit.
      
    **Answer:**
    - The project consists of a module `file_1_0` used inside `file_1_1`.
